@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<include file="struts-default.xml"/>
+	<package name="tutorial" extends="struts-default">
+		<action name="choosebook" class="choose.book" method="query">
+			<result name="success">BookData.jsp</result>
+		</action>
+		<action name="chooseauthor" class="choose.author" method="query">
+			<result  name="success">/Bookauthor.jsp</result>
+		</action>
+		<action name="chooseNew">
+			<result>NewBook.jsp</result>
+		</action>
+		<action name="Inputdata" class="choose.chooseNew" method="insert">
+			<result name="error">newerror.jsp</result>
+			<result name="success">index.jsp</result>
+		</action>
+		<action name="return">
+		<result>/index.jsp</result>
+		</action>
+	</package>
+</struts>
